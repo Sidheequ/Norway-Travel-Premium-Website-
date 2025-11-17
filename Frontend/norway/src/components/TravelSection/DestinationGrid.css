@@ -1,9 +1,9 @@
 .destination-grid-section {
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .destination-title {
-  color: #fff;
+  color: #0b0000;
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 2rem;
@@ -19,8 +19,8 @@
 
 .destination-card {
   flex: 1 1 22%;
-  min-width: 240px;
-  max-width: 350px;
+  min-width: 140px;
+  max-width: 250px;
   aspect-ratio: 3/4;
   border-radius: 20px;
   overflow: hidden;
@@ -60,7 +60,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 2px;
-  text-align: center;
+  text-align:center;
   text-shadow: 0 2px 8px rgba(0,0,0,0.4);
   opacity: 0.92;
 }

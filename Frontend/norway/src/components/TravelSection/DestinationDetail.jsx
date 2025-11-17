@@ -1,8 +1,10 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import './DestinationDetail.css';
+import goa from '../../assets/goa.jpg';
 
 const destinations = [
-  { name: 'Goa', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80', description: 'Goa is famous for its beautiful beaches, vibrant nightlife, and Portuguese heritage.' },
+  { name: 'Goa', image: goa, description: 'Goa is a state in western India with coastlines stretching along the Arabian Sea. Its long history as a Portuguese colony prior to 1961 is evident in its preserved 17th-century churches and the area’s tropical spice plantations. Goa is also known for its beaches, ranging from popular stretches at Baga and Palolem to those in laid-back fishing villages such as Agonda.' },
   { name: 'Karnataka', image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80', description: 'Karnataka is known for its rich history, palaces, and natural beauty.' },
   { name: 'Tamilnadu', image: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80', description: 'Tamil Nadu is renowned for its ancient temples, classical arts, and Dravidian culture.' },
   { name: 'Kerala', image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80', description: 'Kerala is called "Gods Own Country" for its backwaters, greenery, and unique traditions.' },
@@ -18,11 +20,21 @@ function DestinationDetail() {
   const dest = destinations.find(d => d.name.toLowerCase().replace(/ /g, '-') === name);
   if (!dest) return <div style={{color:'#fff',textAlign:'center'}}>Destination not found.</div>;
   return (
-    <div style={{maxWidth:700,margin:'40px auto',background:'#222',borderRadius:20,padding:32,color:'#fff',boxShadow:'0 4px 24px rgba(0,0,0,0.18)'}}>
-      <button onClick={() => navigate(-1)} style={{marginBottom:20,background:'#6366F1',color:'#fff',border:'none',padding:'8px 18px',borderRadius:8,cursor:'pointer'}}>Back</button>
-      <img src={dest.image} alt={dest.name} style={{width:'100%',borderRadius:16,marginBottom:24}} />
-      <h1 style={{fontSize:'2.2rem',marginBottom:12}}>{dest.name}</h1>
-      <p style={{fontSize:'1.15rem'}}>{dest.description}</p>
+    <div className="hero-section">
+      <div className="hero-container">
+        <div className="hero-image-wrapper">
+          <img
+            className="hero-image"
+            alt={dest.name}
+            src={dest.image}
+          />
+        </div>
+        <div className="hero-text-wrapper">
+          {/* <button onClick={() => navigate(-1)} className="btn-primary" style={{marginBottom:20}}>Back</button> */}
+          <h1 className="hero-title">{dest.name}</h1>
+          <p className="hero-description">{dest.description}</p>
+        </div>
+      </div>
     </div>
   );
 }

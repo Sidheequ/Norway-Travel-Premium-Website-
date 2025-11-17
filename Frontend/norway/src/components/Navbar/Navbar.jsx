@@ -15,10 +15,7 @@ function Navbar() {
           <Link to="/destinations">Destinations</Link>
           <Link to="/contact">Contact</Link>
         </nav>
-        <button className="nav-button">
-          Button
-          
-        </button>
+        
       </div>
     </header>
   );

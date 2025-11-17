@@ -1,6 +1,8 @@
 .hero-container {
     position: relative;
     overflow: hidden;
+    background-color:cadetblue;
+    padding: 20px 120px;
 
     
   }
@@ -10,8 +12,7 @@
   }
   
   .hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     padding: 0 1rem;
     position: relative;
     display: flex;
