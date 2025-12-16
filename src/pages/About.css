@@ -1,0 +1,29 @@
+/* About Page Responsive Styles */
+
+@media screen and (max-width: 768px) {
+    .glass-card {
+        padding: 20px !important;
+    }
+
+    .vision-mission-container {
+        padding: 40px 15px !important;
+        margin-top: 40px !important;
+    }
+
+    .vision-mission-container .row {
+        flex-direction: column;
+    }
+
+    .vision-mission-container .col-md-6 {
+        padding: 0 !important;
+        margin-bottom: 30px;
+    }
+
+    .vision-mission-container .col-md-6:last-child {
+        margin-bottom: 0;
+    }
+
+    .team h2 {
+        font-size: 2rem;
+    }
+}
