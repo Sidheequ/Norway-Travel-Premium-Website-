@@ -6,10 +6,10 @@ const images = [
     IMAGES['1.JPG'],
     IMAGES['2.JPG'],
     IMAGES['3.JPG'],
-    IMAGES['4.jpeg'],
-    IMAGES['5.jpeg'],
-    IMAGES['6.jpeg'],
-    IMAGES['7.JPG'],
+    IMAGES['kerala1.jpg'],
+    IMAGES['kerala2.jpg'],
+    IMAGES['rajasthan1.jpg'],
+    IMAGES['tamilnadu1.jpg'],
     IMAGES['8.JPG'],
     IMAGES['9.JPG']
 ];

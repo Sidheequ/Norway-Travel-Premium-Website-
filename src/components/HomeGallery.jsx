@@ -4,10 +4,11 @@ import './HomeGallery.css';
 import { IMAGES } from '../data/imageUrls';
 
 // Use Cloudinary Images
-const img1 = IMAGES['4.jpeg'];
-const img2 = IMAGES['5.jpeg'];
-const img3 = IMAGES['6.jpeg'];
-const img4 = IMAGES['7.JPG'];
+const img1 = IMAGES['rajasthan1.jpg'];
+const img2 = IMAGES['kerala1.jpg'];
+const img3 = IMAGES['kerala2.jpg'];
+const img4 = IMAGES['tamilnadu1.jpg'];
+const img5 = IMAGES['kerala3.jpg'];
 
 const HomeGallery = () => {
     const navigate = useNavigate();

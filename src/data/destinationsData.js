@@ -1,10 +1,10 @@
 import { IMAGES } from './imageUrls';
 
-const img1 = IMAGES['kerala.jpg'];
+const img1 = IMAGES['kerala1.jpg'];
 const img2 = IMAGES['karnataka.jpg'];
-const img3 = IMAGES['tamilnadu.jpg'];
+const img3 = IMAGES['tamilnadu1.jpg'];
 const img4 = IMAGES['hydrabad.jpg'];
-const img5 = IMAGES['rajastan.jpg'];
+const img5 = IMAGES['rajasthan1.jpg'];
 const img6 = IMAGES['delhi.jpg'];
 const img7 = IMAGES['goa.jpg'];
 const img8 = IMAGES['manali.jpg'];
