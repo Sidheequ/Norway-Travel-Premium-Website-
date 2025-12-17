@@ -1,0 +1,280 @@
+.google-reviews-section {
+    padding: 60px 0;
+    background-color: #0a192f;
+    /* Deep Navy background */
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.reviews-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #d4af37;
+    /* Gold */
+    margin-bottom: 10px;
+}
+
+/* Carousel Container */
+.reviews-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 5%;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 #0a192f;
+    align-items: stretch;
+}
+
+.reviews-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.reviews-carousel::-webkit-scrollbar-track {
+    background: #0a192f;
+}
+
+.reviews-carousel::-webkit-scrollbar-thumb {
+    background-color: #d4af37;
+    border-radius: 4px;
+}
+
+/* Common Card Styles */
+.review-card-base {
+    flex: 0 0 300px;
+    /* Fixed width */
+    scroll-snap-align: center;
+    background: #fff;
+    color: #333;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 280px;
+}
+
+@media (max-width: 480px) {
+    .review-card-base {
+        flex: 0 0 85vw;
+        /* Responsive width for mobile */
+        min-width: 250px;
+    }
+}
+
+/* 1. Add Review Card */
+.add-review-card {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.add-review-card:hover {
+    transform: scale(1.02);
+}
+
+.add-btn {
+    width: 60px;
+    height: 60px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* 2. Summary Card */
+.summary-card {
+    background: linear-gradient(135deg, #fce0f7 0%, #e8dff5 100%);
+    justify-content: center;
+    text-align: center;
+}
+
+.summary-icon {
+    width: 50px;
+    height: 50px;
+    background: #d14d88;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin: 0 auto 15px;
+}
+
+.rating-stars {
+    color: #fbc02d;
+    /* Star yellow */
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* 3. User Review Card */
+.user-review-card {
+    justify-content: flex-start;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #0056b3;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+.reviewer-info h4 {
+    font-size: 0.95rem;
+    margin: 0;
+    color: #000;
+}
+
+.reviewer-info span {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.google-icon {
+    margin-left: auto;
+    width: 20px;
+}
+
+.review-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #444;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+    color: #0a192f;
+    font-family: 'Playfair Display', serif;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.star-rating-input {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.star {
+    font-size: 24px;
+    color: #ddd;
+    transition: color 0.2s;
+}
+
+.star.active {
+    color: #fbc02d;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #b4942b;
+}
+
+.file-preview {
+    margin-top: 10px;
+    max-width: 100px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}

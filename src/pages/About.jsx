@@ -2,22 +2,24 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import TeamCard from '../components/TeamCard';
 import '../pages/About.css';
-import img1 from '../assets/images/1.JPG';
-import img2 from '../assets/images/renju.png';
-import img3 from '../assets/images/subin.png';
-import img4 from '../assets/images/sojan.png';
-import img5 from '../assets/images/me.jpg';
-import img6 from '../assets/images/amalnandu.png';
-import img7 from '../assets/images/sarath.png';
-import img8 from '../assets/images/sangeeth.png';
-import img9 from '../assets/images/1.JPG';
-import img10 from '../assets/images/1.JPG';
-import img11 from '../assets/images/nandhu.png';
-import img12 from '../assets/images/renju1.png';
-import img13 from '../assets/images/jibin.png';
-import img14 from '../assets/images/sudhi.png'; // Corrected from sudheesh.png
-import img15 from '../assets/images/shibin.png';
-import img16 from '../assets/images/aswin.png';
+import { IMAGES } from '../data/imageUrls';
+
+const img1 = IMAGES['1.JPG'];
+const img2 = IMAGES['renju.png'];
+const img3 = IMAGES['subin.png'];
+const img4 = IMAGES['sojan.png'];
+const img5 = IMAGES['me.jpg'];
+const img6 = IMAGES['amalnandu.png'];
+const img7 = IMAGES['sarath.png'];
+const img8 = IMAGES['sangeeth.png'];
+const img9 = IMAGES['1.JPG'];
+const img10 = IMAGES['1.JPG'];
+const img11 = IMAGES['nandhu.png'];
+const img12 = IMAGES['renju1.png'];
+const img13 = IMAGES['jibin.png']
+const img14 = IMAGES['sudhi.png'];
+const img15 = IMAGES['shibin.png'];
+const img16 = IMAGES['aswin.png'];
 
 const About = () => {
     return (
@@ -37,7 +39,7 @@ const About = () => {
                 <div className="glass-card" style={{ padding: '50px', marginBottom: '50px' }}>
                     <h2 className="text-center" style={{ marginBottom: '30px', color: '#fff' }}>Our Story</h2>
                     <p style={{ fontSize: '1.1rem', color: '#e6f1ff', lineHeight: '1.8', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-                        Founded in 2024, Norway Travel Premium started with a simple mission: to offer discerning travelers a way to experience the raw grandeur of Norway without compromising on comfort and style. We believe that the best way to see the northern lights is from a cozy glass igloo, and the best way to explore the fjords is on a private yacht. Our team of local experts curates every itinerary to ensure it meets our high standards of luxury and authenticity.
+                        Founded in 2023, Norway Travel Premium started with a simple mission: to offer discerning travelers a way to experience the raw grandeur of Norway without compromising on comfort and style. We believe that the best way to see the northern lights is from a cozy glass igloo, and the best way to explore the fjords is on a private yacht. Our team of local experts curates every itinerary to ensure it meets our high standards of luxury and authenticity.
                     </p>
                 </div>
 

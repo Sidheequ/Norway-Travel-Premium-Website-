@@ -37,13 +37,13 @@ const Contact = () => {
                     <div className="glass-card">
                         <h3 style={{ marginBottom: '20px', fontSize: '1.5rem' }}>Get in Touch</h3>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', color: '#e6f1ff' }}>
-                            <FaPhone style={{ marginRight: '15px', color: '#d4af37' }} /> +47 123 456 789
+                            <FaPhone style={{ marginRight: '15px', color: '#d4af37' }} />+91 9895529892,+91 9556925280
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', color: '#e6f1ff' }}>
-                            <FaEnvelope style={{ marginRight: '15px', color: '#d4af37' }} /> info@norwaypremium.com
+                            <FaEnvelope style={{ marginRight: '15px', color: '#d4af37' }} /> norwaytravellightkottarakkara@gmail.com
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', color: '#e6f1ff' }}>
-                            <FaMapMarkerAlt style={{ marginRight: '15px', color: '#d4af37' }} /> 123 Fjord Avenue, Oslo
+                            <FaMapMarkerAlt style={{ marginRight: '15px', color: '#d4af37' }} /> Near St.Mary's JIO BP Mylom Jn Kottarakkara,Kollam, kerala
                         </div>
 
                         <h3 style={{ marginTop: '30px', marginBottom: '15px', fontSize: '1.2rem' }}>Office Hours</h3>

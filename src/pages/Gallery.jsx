@@ -1,25 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import img1 from '../assets/images/1.JPG';
-import img2 from '../assets/images/2.JPG';
-import img3 from '../assets/images/3.JPG';
-import img4 from '../assets/images/4.jpeg';
-import img5 from '../assets/images/5.jpeg';
-import img6 from '../assets/images/6.jpeg';
-import img7 from '../assets/images/7.JPG';
-import img8 from '../assets/images/8.JPG';
-import img9 from '../assets/images/9.JPG';
+import { IMAGES } from '../data/imageUrls';
 
 const images = [
-    img1,
-    img2,
-    img3,
-    img4,
-    img5,
-    img6,
-    img7,
-    img8,
-    img9
+    IMAGES['1.JPG'],
+    IMAGES['2.JPG'],
+    IMAGES['3.JPG'],
+    IMAGES['4.jpeg'],
+    IMAGES['5.jpeg'],
+    IMAGES['6.jpeg'],
+    IMAGES['7.JPG'],
+    IMAGES['8.JPG'],
+    IMAGES['9.JPG']
 ];
 
 const Gallery = () => {

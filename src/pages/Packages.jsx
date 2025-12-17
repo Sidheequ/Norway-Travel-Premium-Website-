@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 // import Card from '../components/Card';
-import img1 from '../assets/images/karnataka.jpg';
-import img2 from '../assets/images/delhi.jpg';
-import img3 from '../assets/images/hydrabad.jpg';
-import img4 from '../assets/images/munnar.jpg';
-import img5 from '../assets/images/kerala.jpg';
-// import img6 from '../assets/images/karnataka.jpg';
+import { IMAGES } from '../data/imageUrls';
+
+const img1 = IMAGES['karnataka.jpg'];
+const img2 = IMAGES['kerala.jpg'];
+const img3 = IMAGES['hydrabad.jpg'];
+const img4 = IMAGES['munnar.jpg'];
+const img5 = IMAGES['kerala.jpg'];
+const img6 = IMAGES['manali.jpg'];
 
 // const packagesData = [
 //     {
@@ -65,7 +68,7 @@ import img5 from '../assets/images/kerala.jpg';
 //     }
 // ];
 
-import { Link } from 'react-router-dom';
+
 
 const Packages = () => {
     return (
@@ -94,7 +97,7 @@ const Packages = () => {
 
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
                         gap: '40px',
                         alignItems: 'center',
                         textAlign: 'left'
@@ -140,7 +143,7 @@ const Packages = () => {
                                 src={img2}
                                 alt="Premium Package"
                                 style={{
-                                    width: '80%', height:'25%',
+                                    width: '80%', height: '25%',
                                     borderRadius: '15px 125px 24px 145px',
                                     boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
                                     objectFit: 'cover'

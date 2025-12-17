@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars, FaTimes, FaPlaneDeparture } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { IMAGES } from '../data/imageUrls';
 import '../index.css';
 
 const Navbar = () => {
+    const logo = IMAGES['logo.png'];
     const [click, setClick] = useState(false);
     const [scroll, setScroll] = useState(false);
 
@@ -27,18 +29,8 @@ const Navbar = () => {
         <>
             <nav className={scroll ? 'navbar active' : 'navbar'}>
                 <div className="navbar-container">
-                    <Link to="/" className="navbar-logo" onClick={closeMobileMenu} style={{
-                        color: '#fff',
-                        justifySelf: 'start',
-                        cursor: 'pointer',
-                        textDecoration: 'none',
-                        fontSize: '1.5rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        fontFamily: '"Playfair Display", serif',
-                        fontWeight: 'bold'
-                    }}>
-                        <FaPlaneDeparture style={{ marginRight: '10px', color: '#d4af37' }} />
+                    <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+                        <img src={logo} alt="NorwayTravel" className="navbar-logo-img" />
                         Norway<span style={{ color: '#d4af37' }}>TravelPremium</span>
                     </Link>
 
@@ -51,9 +43,9 @@ const Navbar = () => {
                             <Link to="/" className='nav-links' onClick={closeMobileMenu}>Home</Link>
                         </li>
                         <li className='nav-item'>
-                        <li className='nav-item'>
                             <Link to="/about" className='nav-links' onClick={closeMobileMenu}>About</Link>
                         </li>
+                        <li className='nav-item'>
                             <Link to="/packages" className='nav-links' onClick={closeMobileMenu}>Packages</Link>
                         </li>
                         <li className='nav-item'>

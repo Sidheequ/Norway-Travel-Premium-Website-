@@ -1,0 +1,114 @@
+.home-gallery-section {
+    padding: 80px 0;
+    background-color: #0d1b2a;
+    /* Slightly darker/different shade than reviews for separation? Or same #0a192f */
+    background-color: #0a192f;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.gallery-text-content {
+    flex: 1;
+    max-width: 400px;
+}
+
+.gallery-text-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.gallery-text-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
+
+.gallery-btn {
+    background-color: #d4af37;
+    /* Gold */
+    color: #fff;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.gallery-btn:hover {
+    background-color: #b4942b;
+    transform: translateY(-2px);
+}
+
+.gallery-grid {
+    flex: 1.5;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 250px);
+    gap: 20px;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Make one item tall or wide for visual interest if using 4 images */
+.gallery-item.large {
+    grid-row: span 2;
+}
+
+@media (max-width: 968px) {
+    .gallery-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallery-text-content {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .gallery-grid {
+        width: 100%;
+        grid-template-rows: repeat(2, 200px);
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 200px);
+    }
+}

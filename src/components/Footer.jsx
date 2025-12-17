@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaPlaneDeparture } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { IMAGES } from '../data/imageUrls';
 
 const Footer = () => {
+    const logo = IMAGES['logo.png'];
     return (
         <footer style={{ backgroundColor: '#020c1b', color: '#fff', padding: '60px 0 20px' }}>
             <div className="container">
@@ -10,8 +12,8 @@ const Footer = () => {
 
                     {/* Brand Column */}
                     <div>
-                        <Link to="/" style={{ fontSize: '1.5rem', fontFamily: '"Playfair Display", serif', fontWeight: 'bold', display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-                            <FaPlaneDeparture style={{ marginRight: '10px', color: '#d4af37' }} />
+                        <Link to="/" style={{ fontSize: '1.5rem', fontFamily: '"Playfair Display", serif', fontWeight: 'bold', display: 'flex', alignItems: 'center', marginBottom: '20px', textDecoration: 'none', color: '#fff' }}>
+                            <img src={logo} alt="NorwayTravel" style={{ height: '40px', marginRight: '10px' }} />
                             Norway<span style={{ color: '#d4af37' }}>TravelPremium</span>
                         </Link>
                         <p style={{ color: '#8892b0', marginBottom: '20px' }}>
@@ -26,7 +28,7 @@ const Footer = () => {
                     </div>
 
                     {/* Quick Links */}
-                    <div>
+                    {/* <div>
                         <h3 style={{ color: '#d4af37', marginBottom: '20px' }}>Quick Links</h3>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                             <li><Link to="/">Home</Link></li>
@@ -36,18 +38,18 @@ const Footer = () => {
                             <li><Link to="/gallery">Gallery</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
                         </ul>
-                    </div>
+                    </div> */}
 
                     {/* Contact Info */}
                     <div>
                         <h3 style={{ color: '#d4af37', marginBottom: '20px' }}>Contact Us</h3>
-                        <p style={{ color: '#8892b0', marginBottom: '10px' }}>123 Fjord Avenue, Oslo, Norway</p>
-                        <p style={{ color: '#8892b0', marginBottom: '10px' }}>+47 123 456 789</p>
-                        <p style={{ color: '#8892b0', marginBottom: '10px' }}>info@norwaypremium.com</p>
+                        <p style={{ color: '#8892b0', marginBottom: '10px' }}>Near St.Mary's JIO BP Mylom Jn Kottarakkara,Kollam, kerala</p>
+                        <p style={{ color: '#8892b0', marginBottom: '10px' }}>+91 9895529892,+91 9556925280</p>
+                        <p style={{ color: '#8892b0', marginBottom: '10px' }}>norwaytravellightkottarakkara@gmail.com</p>
                     </div>
 
                     {/* Newsletter */}
-                    <div>
+                    <div style={{ marginLeft: '10px' }}>
                         <h3 style={{ color: '#d4af37', marginBottom: '20px' }}>Newsletter</h3>
                         <p style={{ color: '#8892b0', marginBottom: '15px' }}>Subscribe for latest offers.</p>
                         <form style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -62,7 +64,7 @@ const Footer = () => {
                                     color: '#fff'
                                 }}
                             />
-                            <button className="btn" style={{ border: 'none', width: '100%' }}>Subscribe</button>
+                            <button className="btn" style={{ border: 'none', width: '100%' }}>Contact Us</button>
                         </form>
                     </div>
                 </div>

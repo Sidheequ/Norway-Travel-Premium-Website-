@@ -1,11 +1,13 @@
-import img1 from '../assets/images/kerala.jpg';
-import img2 from '../assets/images/karnataka.jpg';
-import img3 from '../assets/images/tamilnadu.jpg';
-import img4 from '../assets/images/hydrabad.jpg';
-import img5 from '../assets/images/rajastan.jpg';
-import img6 from '../assets/images/delhi.jpg';
-import img7 from '../assets/images/goa.jpg';
-import img8 from '../assets/images/manali.jpg';
+import { IMAGES } from './imageUrls';
+
+const img1 = IMAGES['kerala.jpg'];
+const img2 = IMAGES['karnataka.jpg'];
+const img3 = IMAGES['tamilnadu.jpg'];
+const img4 = IMAGES['hydrabad.jpg'];
+const img5 = IMAGES['rajastan.jpg'];
+const img6 = IMAGES['delhi.jpg'];
+const img7 = IMAGES['goa.jpg'];
+const img8 = IMAGES['manali.jpg'];
 
 export const destinationsData = [
     {
@@ -58,7 +60,7 @@ export const destinationsData = [
             "Basilica of Bom Jesus: A Pilgrimage Through History and Faith",
             "Fort Aguada: Sunset, Sea, and Stories of Yore",
             "Anjuna Flea Market: A Bohemian Bazaar Like No Other",
-         "Agonda: The Hidden Gem of Goa"]
+            "Agonda: The Hidden Gem of Goa"]
     },
     {
         id: 5,
@@ -66,10 +68,10 @@ export const destinationsData = [
         image: img4,
         description: "Hyderabad is a city in Telangana, India. It is known for its rich history, culture, and cuisine.",
         places: ["Charminar – The iconic 16th-century marvel",
-             "Hussain Sagar Lake: A Serene Spot for Boating and Photography",
-             "Sindhi Society Museum: A Window into Telugu Culture",
-             "Hyderabad Zoo: A Sanctuary for Wildlife and Education",
-             "Birla Mandir: A Modern Temple of Peace",
+            "Hussain Sagar Lake: A Serene Spot for Boating and Photography",
+            "Sindhi Society Museum: A Window into Telugu Culture",
+            "Hyderabad Zoo: A Sanctuary for Wildlife and Education",
+            "Birla Mandir: A Modern Temple of Peace",
             "Ramoji Film City – Asia’s largest film studio complex and theme park"]
     },
     {
@@ -89,9 +91,9 @@ export const destinationsData = [
         title: "MANALI",
         image: img8,
         description: "Tucked away in the heart of Himachal Pradesh, Manali is a dream destination for nature lovers, adventure seekers, and peace chasers alike. From snow-capped peaks to vibrant markets and thrilling activities, our customizable tour packages ensure you enjoy Manali the way you’ve always imagined.",
-        places: ["Solang Valley – Perfect for paragliding, skiing, and snowboarding", 
-            "Rohtang Pass – A breathtaking mountain pass offering snow adventures and scenic drives", 
-            "Hidimba Devi Temple – A peaceful spiritual spot surrounded by cedar forests", 
+        places: ["Solang Valley – Perfect for paragliding, skiing, and snowboarding",
+            "Rohtang Pass – A breathtaking mountain pass offering snow adventures and scenic drives",
+            "Hidimba Devi Temple – A peaceful spiritual spot surrounded by cedar forests",
             "Old Manali – Known for cozy cafés, vibrant culture, and riverside charm",
             "Jogini Falls & Vashisht Hot Springs – Natural beauty with a soothing touch."]
     },
@@ -101,11 +103,11 @@ export const destinationsData = [
         image: img6,
         description: "Step into the heart of India with our Delhi–Agra tour package, where royal history, vibrant culture, and architectural wonders await. From the bustling streets of Delhi to the timeless beauty of the Taj Mahal, this tour offers a perfect blend of adventure, heritage, and relaxation. All plans are fully customizable to match your preferences!",
         places: [
-            "India Gate – Symbol of national pride", 
-            "Red Fort & Qutub Minar– A UNESCO World Heritage Site with stunning architecture and rich history", 
-            "Humayun’s Tomb – A UNESCO marvel", 
-            "Raj Ghat – Gandhi memorial", 
-            "Chandni Chowk – Street food & heritage market", 
+            "India Gate – Symbol of national pride",
+            "Red Fort & Qutub Minar– A UNESCO World Heritage Site with stunning architecture and rich history",
+            "Humayun’s Tomb – A UNESCO marvel",
+            "Raj Ghat – Gandhi memorial",
+            "Chandni Chowk – Street food & heritage market",
             "Jama Masjid – A UNESCO World Heritage Site with stunning architecture and rich history",
             "Taj Mahal – One of the Seven Wonders of the World",
             "Agra Fort – A UNESCO site rich with Mughal history",
