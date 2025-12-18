@@ -2,14 +2,26 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ChromaGrid from '../components/ChromaGrid';
 import '../pages/About.css';
-const img12 = IMAGES['renju1.png'];
-const img13 = IMAGES['jibin1.jpg']
-const img14 = IMAGES['sudhi.png'];
-const img15 = IMAGES['shibin.png'];
-const img16 = IMAGES['aswin.png'];
-
 
 const About = () => {
+    // Team Member Images
+    const img1 = "https://res.cloudinary.com/dclejmil5/image/upload/v1766030455/shibu1_t6yfwv.jpg"; // Shibu
+    const img2 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994456/norway_project/renju.png"; // Renju
+    const img3 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994477/norway_project/subin.png"; // Subin
+    const img4 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994474/norway_project/sojan.png"; // Sojan
+    const img5 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994433/norway_project/me.jpg";   // Sidheequ
+    const img6 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994369/norway_project/amalnandu.png";
+    const img7 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994467/norway_project/sarath.png";
+    const img8 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994464/norway_project/sangeeth.png";
+    const img9 = "https://res.cloudinary.com/dclejmil5/image/upload/v1766026804/norway_project/akash.jpg";
+    const img10 = "https://res.cloudinary.com/dclejmil5/image/upload/v1766031897/aneesh_yepthk.jpg";
+    const img11 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994443/norway_project/nandhu.png";
+    const img12 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994460/norway_project/renju1.png";
+    const img13 = "https://res.cloudinary.com/dclejmil5/image/upload/v1766031898/jibin_waemxd.jpg";
+    const img14 = "https://res.cloudinary.com/dclejmil5/image/upload/v1766032319/sudhi_etcgqb.png";
+    const img15 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994470/norway_project/shibin.png";
+    const img16 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994374/norway_project/aswin.png";
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -20,14 +32,14 @@ const About = () => {
                 <div className="text-center" style={{ marginBottom: '60px' }}>
                     <h1 style={{ marginBottom: '15px' }}>About <span className="text-gold">Us</span></h1>
                     <p style={{ color: '#8892b0', maxWidth: '600px', margin: '0 auto' }}>
-                        We are passionate about showing you the real Norway.
+                        We are passionate tour operators providing luxury and premium travel experiences.
                     </p>
                 </div>
 
                 <div className="glass-card" style={{ padding: '50px', marginBottom: '50px' }}>
                     <h2 className="text-center" style={{ marginBottom: '30px', color: '#fff' }}>Our Story</h2>
                     <p style={{ fontSize: '1.1rem', color: '#e6f1ff', lineHeight: '1.8', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-                        Founded in 2023, Norway Travel Premium started with a simple mission: to offer discerning travelers a way to experience the raw grandeur of Norway without compromising on comfort and style. We believe that the best way to see the northern lights is from a cozy glass igloo, and the best way to explore the fjords is on a private yacht. Our team of local experts curates every itinerary to ensure it meets our high standards of luxury and authenticity.
+                        Founded in 2023, Norway Travel Premium started with a simple mission: to offer travelers a way to experience grand destinations without compromising on comfort and style. Our team of local experts curates every itinerary to ensure it meets our high standards of excellence.
                     </p>
                 </div>
 
@@ -47,7 +59,7 @@ const About = () => {
                 </div>
 
                 <div className="team">
-                    <h1 className="text-center" style={{ marginBottom: '30px', color: '#fff' }}>Our Team</h1>
+                    <h1 className="text-center" style={{ marginBottom: '30px', marginTop: '60px', color: '#fff' }}>Our Team</h1>
 
                     {/* Section 1: 2 Cards */}
                     <div style={{ position: 'relative', marginBottom: '30px' }}>
