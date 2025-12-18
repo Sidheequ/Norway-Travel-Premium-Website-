@@ -22,5 +22,6 @@
 .env
 src/data/imageUrls.js
 server/.env
+server/node_modules/
 
 .env

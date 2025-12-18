@@ -72,46 +72,21 @@ export const destinationsData = [
             "Sindhi Society Museum: A Window into Telugu Culture",
             "Hyderabad Zoo: A Sanctuary for Wildlife and Education",
             "Birla Mandir: A Modern Temple of Peace",
-            "Ramoji Film City – Asia’s largest film studio complex and theme park"]
-    },
-    {
-        id: 6,
-        title: "RAJASTHAN",
-        image: img5,
-        description: "Rajasthan is a state in northwestern India, bordering Pakistan to the west and the states of Gujarat and Haryana to the south and east. It is known for its rich history, culture, and cuisine.",
-        places: [
-            "Jaisalmer Fort: A Gateway to the Desert",
-            "Jaipur: The Pink City with Royal Forts and Markets",
-            "Pushkar: A Spiritual Hub with Sacred Lakes and Temples",
-            "Ajmer: A Gateway to the Holy with the Ajmer Sharif Dargah",
-            "Bikaner: A Fortified City with Camel Markets and Fortresses"]
-    },
-    {
-        id: 7,
-        title: "MANALI",
-        image: img8,
-        description: "Tucked away in the heart of Himachal Pradesh, Manali is a dream destination for nature lovers, adventure seekers, and peace chasers alike. From snow-capped peaks to vibrant markets and thrilling activities, our customizable tour packages ensure you enjoy Manali the way you’ve always imagined.",
-        places: ["Solang Valley – Perfect for paragliding, skiing, and snowboarding",
-            "Rohtang Pass – A breathtaking mountain pass offering snow adventures and scenic drives",
-            "Hidimba Devi Temple – A peaceful spiritual spot surrounded by cedar forests",
-            "Old Manali – Known for cozy cafés, vibrant culture, and riverside charm",
-            "Jogini Falls & Vashisht Hot Springs – Natural beauty with a soothing touch."]
-    },
-    {
-        id: 8,
-        title: "DELHI",
-        image: img6,
-        description: "Step into the heart of India with our Delhi–Agra tour package, where royal history, vibrant culture, and architectural wonders await. From the bustling streets of Delhi to the timeless beauty of the Taj Mahal, this tour offers a perfect blend of adventure, heritage, and relaxation. All plans are fully customizable to match your preferences!",
-        places: [
-            "India Gate – Symbol of national pride",
-            "Red Fort & Qutub Minar– A UNESCO World Heritage Site with stunning architecture and rich history",
-            "Humayun’s Tomb – A UNESCO marvel",
-            "Raj Ghat – Gandhi memorial",
-            "Chandni Chowk – Street food & heritage market",
-            "Jama Masjid – A UNESCO World Heritage Site with stunning architecture and rich history",
-            "Taj Mahal – One of the Seven Wonders of the World",
-            "Agra Fort – A UNESCO site rich with Mughal history",
-            "Mehtab Bagh – Stunning view of the Taj at sunset",
-            "Fatehpur Sikri – An ancient red sandstone city",]
-    }
-];
+            {
+                id: 8,
+                title: "DELHI",
+                image: img6,
+                description: "Step into the heart of India with our Delhi–Agra tour package, where royal history, vibrant culture, and architectural wonders await. From the bustling streets of Delhi to the timeless beauty of the Taj Mahal, this tour offers a perfect blend of adventure, heritage, and relaxation. All plans are fully customizable to match your preferences!",
+                places: [
+                    "India Gate – Symbol of national pride",
+                    "Red Fort & Qutub Minar– A UNESCO World Heritage Site with stunning architecture and rich history",
+                    "Humayun’s Tomb – A UNESCO marvel",
+                    "Raj Ghat – Gandhi memorial",
+                    "Chandni Chowk – Street food & heritage market",
+                    "Jama Masjid – A UNESCO World Heritage Site with stunning architecture and rich history",
+                    "Taj Mahal – One of the Seven Wonders of the World",
+                    "Agra Fort – A UNESCO site rich with Mughal history",
+                    "Mehtab Bagh – Stunning view of the Taj at sunset",
+                    "Fatehpur Sikri – An ancient red sandstone city",]
+            }
+        ];

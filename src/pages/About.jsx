@@ -2,19 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ChromaGrid from '../components/ChromaGrid';
 import '../pages/About.css';
-import { IMAGES } from '../data/imageUrls';
-
-const img1 = IMAGES['shibu.jpeg'];
-const img2 = IMAGES['renju.png'];
-const img3 = IMAGES['subin.png'];
-const img4 = IMAGES['sojan.png'];
-const img5 = IMAGES['me.jpg'];
-const img6 = IMAGES['amalnandu.png'];
-const img7 = IMAGES['sarath.png'];
-const img8 = IMAGES['sangeeth.png'];
-const img9 = IMAGES['akash.jpeg'];
-const img10 = IMAGES['aneesh.jpeg'];
-const img11 = IMAGES['nandhu.png'];
 const img12 = IMAGES['renju1.png'];
 const img13 = IMAGES['jibin1.jpg']
 const img14 = IMAGES['sudhi.png'];
