@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 // import Card from '../components/Card';
 import axios from 'axios';
 
-const img1 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994413/norway_project/karnataka.jpg";
+const img1 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765989484/hotel_vh08ix.jpg";
 
 const Packages = () => {
     const [packages, setPackages] = useState([]);
