@@ -12,19 +12,20 @@ const ManageGallery = () => {
         imageUrl: '',
         description: ''
     });
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
     // Fetch Gallery
     useEffect(() => {
         const fetchGallery = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/gallery');
+                const res = await axios.get(`${API_URL}/api/gallery`);
                 setGallery(res.data);
             } catch (err) {
                 console.error(err);
             }
         };
         fetchGallery();
-    }, []);
+    }, [API_URL]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,7 +34,7 @@ const ManageGallery = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:5000/api/gallery', formData);
+            const res = await axios.post(`${API_URL}/api/gallery`, formData);
             setGallery([res.data, ...gallery]);
             setFormData({ title: '', imageUrl: '', description: '' });
         } catch (err) {
@@ -44,7 +45,7 @@ const ManageGallery = () => {
     const handleDelete = async (id) => {
         if (!window.confirm("Are you sure?")) return;
         try {
-            await axios.delete(`http://localhost:5000/api/gallery/${id}`);
+            await axios.delete(`${API_URL}/api/gallery/${id}`);
             setGallery(gallery.filter(item => item._id !== id));
         } catch (err) {
             console.error(err);

@@ -14,19 +14,20 @@ const ManagePackages = () => {
         image: ''
     });
     const [editingId, setEditingId] = useState(null);
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
     // Fetch Packages
     useEffect(() => {
         const fetchPackages = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/packages');
+                const res = await axios.get(`${API_URL}/api/packages`);
                 setPackages(res.data);
             } catch (err) {
                 console.error(err);
             }
         };
         fetchPackages();
-    }, []);
+    }, [API_URL]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -40,14 +41,14 @@ const ManagePackages = () => {
         try {
             if (editingId) {
                 // Update
-                const res = await axios.put(`http://localhost:5000/api/packages/${editingId}`, payload, {
+                const res = await axios.put(`${API_URL}/api/packages/${editingId}`, payload, {
                     headers: { token: `Bearer ${user.accessToken}` } // If we add auth middleware later
                 });
                 setPackages(packages.map(pkg => pkg._id === editingId ? res.data : pkg));
                 setEditingId(null);
             } else {
                 // Create
-                const res = await axios.post('http://localhost:5000/api/packages', payload);
+                const res = await axios.post(`${API_URL}/api/packages`, payload);
                 setPackages([...packages, res.data]);
             }
             setFormData({ category: 'One Day', title: '', items: '', image: '' });
@@ -69,7 +70,7 @@ const ManagePackages = () => {
     const handleDelete = async (id) => {
         if (!window.confirm("Are you sure?")) return;
         try {
-            await axios.delete(`http://localhost:5000/api/packages/${id}`);
+            await axios.delete(`${API_URL}/api/packages/${id}`);
             setPackages(packages.filter(pkg => pkg._id !== id));
         } catch (err) {
             console.error(err);
