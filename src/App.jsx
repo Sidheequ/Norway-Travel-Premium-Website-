@@ -11,6 +11,10 @@ import Contact from './pages/Contact';
 import Services from './pages/Services';
 import Testimonials from './pages/Testimonials';
 import Home from './pages/Home';
+import AdminLogin from './pages/AdminLogin';
+import Dashboard from './pages/Dashboard';
+import ManagePackages from './pages/ManagePackages';
+import ManageGallery from './pages/ManageGallery';
 function App() {
   return (
     <Router>
@@ -26,6 +30,12 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
           <Route path="/testimonials" element={<Testimonials />} />
+
+          {/* Admin Routes */}
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/admin/packages" element={<ManagePackages />} />
+          <Route path="/admin/gallery" element={<ManageGallery />} />
         </Routes>
         <Footer />
       </div>

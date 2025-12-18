@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './HomeGallery.css';
-import { IMAGES } from '../data/imageUrls';
-
-// Use Cloudinary Images
-const img1 = IMAGES['rajasthan1.jpg'];
-const img2 = IMAGES['kerala1.jpg'];
-const img3 = IMAGES['kerala2.jpg'];
-const img4 = IMAGES['tamilnadu1.jpg'];
-const img5 = IMAGES['kerala3.jpg'];
+import axios from 'axios';
 
 const HomeGallery = () => {
     const navigate = useNavigate();
+    const [gallery, setGallery] = useState([]);
+
+    useEffect(() => {
+        const fetchGallery = async () => {
+            try {
+                const res = await axios.get('http://localhost:5000/api/gallery');
+                setGallery(res.data);
+            } catch (err) {
+                console.error("Error fetching home gallery:", err);
+            }
+        };
+        fetchGallery();
+    }, []);
 
     return (
         <section className="home-gallery-section">
@@ -28,18 +34,13 @@ const HomeGallery = () => {
                 </div>
 
                 <div className="gallery-grid">
-                    <div className="gallery-item">
-                        <img src={img4} alt="Travel Moment 1" />
-                    </div>
-                    <div className="gallery-item">
-                        <img src={img2} alt="Travel Moment 2" />
-                    </div>
-                    <div className="gallery-item">
-                        <img src={img3} alt="Travel Moment 3" />
-                    </div>
-                    <div className="gallery-item">
-                        <img src={img1} alt="Travel Moment 4" />
-                    </div>
+                    {gallery.length > 0 ? gallery.slice(0, 4).map((item, index) => (
+                        <div className="gallery-item" key={item._id || index}>
+                            <img src={item.imageUrl} alt={item.title || `Travel Moment ${index + 1}`} />
+                        </div>
+                    )) : (
+                        <p style={{ color: 'white' }}>Loading Gallery...</p>
+                    )}
                 </div>
             </div>
         </section>
