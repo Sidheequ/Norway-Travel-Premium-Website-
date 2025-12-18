@@ -18,12 +18,18 @@ const Footer = () => {
                             Experience the breath-taking beauty of Norway with our premium travel packages. We curate the best experiences for you.
                         </p>
                         <div style={{ display: 'flex', gap: '15px' }}>
-                            <FaFacebook size={24} style={{ cursor: 'pointer', color: '#fff' }} title="Facebook" href='https://www.facebook.com/share/1An9FwNNx4/' />
-                            <FaInstagram size={24} style={{ cursor: 'pointer', color: '#fff' }} title="Instagram" href='https://www.instagram.com/norway_travel_premium?igsh=MWsyc3Vma3d0czMxNw==' />
-                            <FaWhatsapp size={24} style={{ cursor: 'pointer', color: '#fff' }} title="Whatsapp" href='https://wa.me/96879080734' />
+                            <a href="https://www.facebook.com/share/1An9FwNNx4/" target="_blank" rel="noopener noreferrer" style={{ color: '#fff' }}>
+                                <FaFacebook size={24} style={{ cursor: 'pointer' }} title="Facebook" />
+                            </a>
+                            <a href="https://www.instagram.com/norway_travel_premium?igsh=MWsyc3Vma3d0czMxNw==" target="_blank" rel="noopener noreferrer" style={{ color: '#fff' }}>
+                                <FaInstagram size={24} style={{ cursor: 'pointer' }} title="Instagram" />
+                            </a>
+                            <a href="https://wa.me/96879080734" target="_blank" rel="noopener noreferrer" style={{ color: '#fff' }}>
+                                <FaWhatsapp size={24} style={{ cursor: 'pointer' }} title="Whatsapp" />
+                            </a>
                             <FaTwitter size={24} style={{ cursor: 'pointer', color: '#fff' }} title="Twitter" />
-                            <Link to="/admin">
-                                <FaUser size={24} style={{ cursor: 'pointer', color: '#fff' }} title="Admin Login" />
+                            <Link to="/admin" style={{ color: '#fff' }}>
+                                <FaUser size={24} style={{ cursor: 'pointer' }} title="Admin Login" />
                             </Link>
                         </div>
                     </div>
@@ -45,7 +51,7 @@ const Footer = () => {
                     <div>
                         <h3 style={{ color: '#d4af37', marginBottom: '20px' }}>Address</h3>
                         <p style={{ color: '#8892b0', marginBottom: '10px' }}>Near St.Mary's JIO Fuels Mylom Kottarakkara,Kollam, Kerala</p>
-                        <p style={{ color: '#8892b0', marginBottom: '10px' }}>+91 9895529892,+91 9556925280</p>
+                        <p style={{ color: '#8892b0', marginBottom: '10px' }}>+91 9895529892,+91 9656925280</p>
                         <p style={{ color: '#8892b0', marginBottom: '10px' }}>norwaytravellightkottarakkara@gmail.com</p>
                     </div>
 

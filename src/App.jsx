@@ -15,9 +15,12 @@ import AdminLogin from './pages/AdminLogin';
 import Dashboard from './pages/Dashboard';
 import ManagePackages from './pages/ManagePackages';
 import ManageGallery from './pages/ManageGallery';
+import ScrollToTop from './components/ScrollToTop';
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <Navbar />
         <Routes>
