@@ -167,7 +167,7 @@
     line-height: 1.5;
     color: #444;
     overflow: hidden;
-    display: -webkit-box;
+    display:-webkit-box;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
 }

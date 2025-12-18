@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { IMAGES } from '../data/imageUrls';
-
-const images = [
-    IMAGES['1.JPG'],
-    IMAGES['2.JPG'],
-    IMAGES['3.JPG'],
-    IMAGES['kerala1.jpg'],
-    IMAGES['kerala2.jpg'],
-    IMAGES['rajasthan1.jpg'],
-    IMAGES['tamilnadu1.jpg'],
-    IMAGES['8.JPG'],
-    IMAGES['9.JPG']
-];
+import axios from 'axios';
 
 const Gallery = () => {
+    const [gallery, setGallery] = useState([]);
+
+    useEffect(() => {
+        const fetchGallery = async () => {
+            try {
+                const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+                const res = await axios.get(`${API_URL}/api/gallery`);
+                setGallery(res.data);
+            } catch (err) {
+                console.error("Error fetching gallery:", err);
+            }
+        };
+        fetchGallery();
+    }, []);
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -30,19 +33,20 @@ const Gallery = () => {
                 </div>
 
                 <div style={{ columns: '3 300px', columnGap: '20px' }}>
-                    {images.map((src, index) => (
+                    {gallery.map((item, index) => (
                         <motion.div
-                            key={index}
+                            key={item._id}
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
                             style={{ marginBottom: '20px', borderRadius: '10px', overflow: 'hidden' }}
                         >
-                            <img src={src} alt={`Gallery ${index}`} style={{ width: '100%', display: 'block', borderRadius: '10px', transition: 'transform 0.3s ease' }}
+                            <img src={item.imageUrl} alt={item.title || `Gallery ${index}`} style={{ width: '100%', display: 'block', borderRadius: '10px', transition: 'transform 0.3s ease' }}
                                 onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                                 onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
                             />
+                            {/* Optional: Show title on hover or below */}
                         </motion.div>
                     ))}
                 </div>

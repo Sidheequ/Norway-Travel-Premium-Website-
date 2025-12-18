@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 const Hero = () => {
     return (
         <div className="hero-container" style={{
-            height: '100vh',
+            height: '90vh',
             width: '100%',
             display: 'flex',
             flexDirection: 'column',

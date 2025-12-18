@@ -32,27 +32,51 @@ const Contact = () => {
                     </p>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '50px' }}>
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+                    gap: '40px',
+                    width: '100%',
+                    alignItems: 'start'
+                }}>
+                    {/* Map Section */}
+                    <div className="glass-card" style={{ padding: '0', overflow: 'hidden', height: '100%', minHeight: '400px' }}>
+                        <iframe
+                            title="Kottarakkara Map"
+                            src="https://maps.google.com/maps?q=St.Mary's%20JIO%20BP%20Mylom%20Jn%20Kottarakkara&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0, minHeight: '400px' }}
+                            allowFullScreen=""
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+
                     {/* Contact Info */}
                     <div className="glass-card">
                         <h3 style={{ marginBottom: '20px', fontSize: '1.5rem' }}>Get in Touch</h3>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', color: '#e6f1ff' }}>
-                            <FaPhone style={{ marginRight: '15px', color: '#d4af37' }} />+91 9895529892,+91 9556925280
+                            <FaPhone style={{ marginRight: '15px', color: '#d4af37' }} />
+                            <span>+91 9895529892, +91 9556925280</span>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', color: '#e6f1ff' }}>
                             <FaEnvelope style={{ marginRight: '15px', color: '#d4af37' }} /> norwaytravellightkottarakkara@gmail.com
                         </div>
-                        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', color: '#e6f1ff' }}>
-                            <FaMapMarkerAlt style={{ marginRight: '15px', color: '#d4af37' }} /> Near St.Mary's JIO BP Mylom Jn Kottarakkara,Kollam, kerala
+                        <div style={{ display: 'flex', alignItems: 'start', marginBottom: '20px', color: '#e6f1ff' }}>
+                            <FaMapMarkerAlt style={{ marginRight: '15px', color: '#d4af37', marginTop: '5px' }} />
+                            <span>Near St.Mary's JIO BP Mylom Jn Kottarakkara, Kollam, Kerala</span>
                         </div>
 
                         <h3 style={{ marginTop: '30px', marginBottom: '15px', fontSize: '1.2rem' }}>Office Hours</h3>
                         <p style={{ color: '#8892b0' }}>Mon - Fri: 9:00 AM - 6:00 PM</p>
                         <p style={{ color: '#8892b0' }}>Sat - Sun: Closed</p>
-                    </div>
 
-                    {/* Contact Form */}
-                    <div className="glass-card">
+                        <a href="https://wa.me/919895529892" className="btn" style={{ marginTop: '20px', display: 'inline-block', textAlign: 'center' }}>Send Message</a>
+                    </div>
+                </div>
+
+                {/* Contact Form */}
+                {/* <div className="glass-card">
                         <form onSubmit={handleSubmit}>
                             <div style={{ marginBottom: '20px' }}>
                                 <label style={{ display: 'block', marginBottom: '10px', color: '#fff' }}>Name</label>
@@ -108,10 +132,9 @@ const Contact = () => {
                                     }}
                                 ></textarea>
                             </div>
-                            <button type="submit" className="btn" style={{ width: '100%' }}>Send Message</button>
-                        </form>
-                    </div>
-                </div>
+                            </form>
+                            </div> */}
+
             </div>
         </motion.div>
     );

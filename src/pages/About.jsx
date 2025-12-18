@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import TeamCard from '../components/TeamCard';
+import ChromaGrid from '../components/ChromaGrid';
 import '../pages/About.css';
 import { IMAGES } from '../data/imageUrls';
 
-const img1 = IMAGES['1.JPG'];
+const img1 = IMAGES['shibu.jpeg'];
 const img2 = IMAGES['renju.png'];
 const img3 = IMAGES['subin.png'];
 const img4 = IMAGES['sojan.png'];
@@ -12,14 +12,15 @@ const img5 = IMAGES['me.jpg'];
 const img6 = IMAGES['amalnandu.png'];
 const img7 = IMAGES['sarath.png'];
 const img8 = IMAGES['sangeeth.png'];
-const img9 = IMAGES['1.JPG'];
-const img10 = IMAGES['1.JPG'];
+const img9 = IMAGES['akash.jpeg'];
+const img10 = IMAGES['aneesh.jpeg'];
 const img11 = IMAGES['nandhu.png'];
 const img12 = IMAGES['renju1.png'];
-const img13 = IMAGES['jibin.png']
+const img13 = IMAGES['jibin1.jpg']
 const img14 = IMAGES['sudhi.png'];
 const img15 = IMAGES['shibin.png'];
 const img16 = IMAGES['aswin.png'];
+
 
 const About = () => {
     return (
@@ -62,44 +63,50 @@ const About = () => {
                     <h1 className="text-center" style={{ marginBottom: '30px', color: '#fff' }}>Our Team</h1>
 
                     {/* Section 1: 2 Cards */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '30px', justifyContent: 'center', marginBottom: '30px' }}>
-                        {[
-                            { name: "Shibu Thankachan", role: "Owner", image: img1 },
-                            { name: "Renju", role: "Owner", image: img2 }
-                        ].map((member, index) => (
-                            <TeamCard key={`s1-${index}`} name={member.name} role={member.role} image={member.image} />
-                        ))}
+                    <div style={{ position: 'relative', marginBottom: '30px' }}>
+                        <ChromaGrid
+                            items={[
+                                { title: "Shibu Thankachan", subtitle: "Owner", image: img1, gradient: "linear-gradient(145deg, #d4af37, #000)", style: { width: "100%", height: "100%" } },
+                                { title: "Renju", subtitle: "Owner", image: img2, gradient: "linear-gradient(145deg, #d4af37, #000)" }
+                            ]}
+                            columns={2}
+                            radius={200}
+                        />
                     </div>
 
                     {/* Section 2: 3 Cards */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '30px', justifyContent: 'center', marginBottom: '30px' }}>
-                        {[
-                            { name: "Subin", role: "Operations Manager", image: img3 },
-                            { name: "Sojan", role: "Finance Lead", image: img4 },
-                            { name: "Sidheequ J", role: "Marketing Head", image: img5 }
-                        ].map((member, index) => (
-                            <TeamCard key={`s2-${index}`} name={member.name} role={member.role} image={member.image} />
-                        ))}
+                    <div style={{ position: 'relative', marginBottom: '10px' }}>
+                        <ChromaGrid
+                            items={[
+                                { title: "Subin", subtitle: "Operations Manager", image: img3, gradient: "linear-gradient(145deg, #4F46E5, #000)" },
+                                { title: "Sojan", subtitle: "Finance Lead", image: img4, gradient: "linear-gradient(145deg, #10B981, #000)" },
+                                { title: "Sidheequ J", subtitle: "Marketing Head", image: img5, gradient: "linear-gradient(145deg, #F59E0B, #000)" }
+                            ]}
+                            columns={3}
+                            radius={250}
+                        />
                     </div>
 
-                    {/* Section 3: 7 Cards */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '30px', justifyContent: 'center' }}>
-                        {[
-                            { name: "Aswin G Nair", role: "Senior Guide", image: img16 },
-                            { name: "Shibin", role: "Guide", image: img15 },
-                            { name: "Renju", role: "Logistics", image: img12 },
-                            { name: "Jibin R", role: "Coordinator", image: img13 },
-                            { name: "Sudheesh", role: "Driver", image: img14 },
-                            { name: "Aneesh", role: "Co-Driver", image: img10 },
-                            { name: "Nandhu", role: "Media Wing", image: img11 },
-                            { name: "Akash", role: "Media Wing", image: img9 },
-                            { name: "Amal Nandu", role: "Staff", image: img6 },
-                            { name: "Sangeth", role: "Staff", image: img8 },
-                            { name: "Sarath", role: "Staff", image: img7 },
-
-                        ].map((member, index) => (
-                            <TeamCard key={`s3-${index}`} name={member.name} role={member.role} image={member.image} />
-                        ))}
+                    {/* Section 3: Rest Cards - 3 Columns */}
+                    <div style={{ position: 'relative' }}>
+                        <ChromaGrid
+                            items={[
+                                { title: "Aswin G Nair", subtitle: "Senior Guide", image: img16, gradient: "linear-gradient(145deg, #EF4444, #000)" },
+                                { title: "Shibin", subtitle: "Guide", image: img15, gradient: "linear-gradient(145deg, #8B5CF6, #000)" },
+                                { title: "Renju", subtitle: "Logistics", image: img12, gradient: "linear-gradient(145deg, #06B6D4, #000)" },
+                                { title: "Jibin R", subtitle: "Coordinator", image: img13, gradient: "linear-gradient(145deg, #EC4899, #000)" },
+                                { title: "Sudheesh", subtitle: "Driver", image: img14, gradient: "linear-gradient(145deg, #6366F1, #000)" },
+                                { title: "Aneesh", subtitle: "Co-Driver", image: img10, gradient: "linear-gradient(145deg, #14B8A6, #000)" },
+                                { title: "Nandhu", subtitle: "Media Wing", image: img11, gradient: "linear-gradient(145deg, #F97316, #000)" },
+                                { title: "Akash", subtitle: "Media Wing", image: img9, gradient: "linear-gradient(145deg, #84CC16, #000)" },
+                                { title: "Amal Nandu", subtitle: "Staff", image: img6, gradient: "linear-gradient(145deg, #3B82F6, #000)" },
+                                { title: "Sangeth", subtitle: "Staff", image: img8, gradient: "linear-gradient(145deg, #A855F7, #000)" },
+                                { title: "Sarath", subtitle: "Staff", image: img7, gradient: "linear-gradient(145deg, #EC4899, #000)" }
+                            ]}
+                            columns={3}
+                            rows={4}
+                            radius={300}
+                        />
                     </div>
                 </div>
 
