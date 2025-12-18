@@ -20,7 +20,7 @@ const Footer = () => {
                         <div style={{ display: 'flex', gap: '15px' }}>
                             <FaFacebook size={24} style={{ cursor: 'pointer', color: '#fff' }} title="Facebook" href='https://www.facebook.com/share/1An9FwNNx4/' />
                             <FaInstagram size={24} style={{ cursor: 'pointer', color: '#fff' }} title="Instagram" href='https://www.instagram.com/norway_travel_premium?igsh=MWsyc3Vma3d0czMxNw==' />
-                            <FaWhatsapp size={24} style={{ cursor: 'pointer', color: '#fff' }} title="Whatsapp" href='https://wa.me/919895529892' />
+                            <FaWhatsapp size={24} style={{ cursor: 'pointer', color: '#fff' }} title="Whatsapp" href='https://wa.me/96879080734' />
                             <FaTwitter size={24} style={{ cursor: 'pointer', color: '#fff' }} title="Twitter" />
                             <Link to="/admin">
                                 <FaUser size={24} style={{ cursor: 'pointer', color: '#fff' }} title="Admin Login" />

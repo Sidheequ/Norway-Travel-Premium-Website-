@@ -71,7 +71,7 @@ const Contact = () => {
                         <p style={{ color: '#8892b0' }}>Mon - Fri: 9:00 AM - 6:00 PM</p>
                         <p style={{ color: '#8892b0' }}>Sat - Sun: Closed</p>
 
-                        <a href="https://wa.me/919895529892" className="btn" style={{ marginTop: '20px', display: 'inline-block', textAlign: 'center' }}>Send Message</a>
+                        <a href="https://wa.me/96879080734" className="btn" style={{ marginTop: '20px', display: 'inline-block', textAlign: 'center' }}>Send Message</a>
                     </div>
                 </div>
 
