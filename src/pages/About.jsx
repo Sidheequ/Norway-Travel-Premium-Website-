@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ChromaGrid from '../components/ChromaGrid';
 import '../pages/About.css';
-
 const About = () => {
     // Team Member Images
     const img1 = "https://res.cloudinary.com/dclejmil5/image/upload/v1766030455/shibu1_t6yfwv.jpg"; // Shibu
@@ -21,7 +20,6 @@ const About = () => {
     const img14 = "https://res.cloudinary.com/dclejmil5/image/upload/v1766032319/sudhi_etcgqb.png";
     const img15 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994470/norway_project/shibin.png";
     const img16 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994374/norway_project/aswin.png";
-
     return (
         <motion.div
             initial={{ opacity: 0 }}

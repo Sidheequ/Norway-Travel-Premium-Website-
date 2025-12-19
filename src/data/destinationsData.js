@@ -67,7 +67,7 @@ export const destinationsData = [
         id: 6,
         title: "RAJASTHAN",
         image: "https://res.cloudinary.com/dclejmil5/image/upload/v1766000372/norway_project/rajasthan1.jpg",
-        description: "Rajasthan is a state in northwestern India, bordering Pakistan to the west and the states of Gujarat and Haryana to the south and east. It is known for its rich history, culture, and cuisine.",
+        description: " राजस्थान is a state in northwestern India, bordering Pakistan to the west and the states of Gujarat and Haryana to the south and east. It is known for its rich history, culture, and cuisine.",
         places: [
             "Jaisalmer Fort: A Gateway to the Desert",
             "Jaipur: The Pink City with Royal Forts and Markets",
