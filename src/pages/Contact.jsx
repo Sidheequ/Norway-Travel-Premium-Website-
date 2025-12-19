@@ -57,7 +57,7 @@ const Contact = () => {
                         <h3 style={{ marginBottom: '20px', fontSize: '1.5rem' }}>Get in Touch</h3>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', color: '#e6f1ff' }}>
                             <FaPhone style={{ marginRight: '15px', color: '#d4af37' }} />
-                            <span>+91 9895529892, +91  9656925280</span>
+                            <span>+91 9895529892, +91 9656925280,+96893299543</span>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', color: '#e6f1ff' }}>
                             <FaEnvelope style={{ marginRight: '15px', color: '#d4af37' }} /> norwaytravellightkottarakkara@gmail.com
@@ -71,7 +71,7 @@ const Contact = () => {
                         <p style={{ color: '#8892b0' }}>Mon - Fri: 9:00 AM - 6:00 PM</p>
                         <p style={{ color: '#8892b0' }}>Sat - Sun: Closed</p>
 
-                        <a href="https://wa.me/96879080734" className="btn" style={{ marginTop: '20px', display: 'inline-block', textAlign: 'center' }}>Send Message</a>
+                        <a href="https://wa.me/+96893299543" className="btn" style={{ marginTop: '20px', display: 'inline-block', textAlign: 'center' }}>Send Message</a>
                     </div>
                 </div>
 
