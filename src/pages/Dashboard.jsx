@@ -38,6 +38,13 @@ const Dashboard = () => {
                         <p>Add or remove images from the home gallery.</p>
                         <Link to="/admin/gallery" className="btn" style={{ marginTop: '20px', display: 'inline-block' }}>Manage Gallery</Link>
                     </div>
+
+                    {/* Reviews Management Card */}
+                    <div className="glass-card" style={{ textAlign: 'center', cursor: 'pointer' }} onClick={() => navigate('/admin/reviews')}>
+                        <h2 style={{ color: '#d4af37', marginBottom: '15px' }}>Reviews</h2>
+                        <p>View, manage, and remove user reviews.</p>
+                        <Link to="/admin/reviews" className="btn" style={{ marginTop: '20px', display: 'inline-block' }}>Manage Reviews</Link>
+                    </div>
                 </div>
             </div>
         </motion.div>

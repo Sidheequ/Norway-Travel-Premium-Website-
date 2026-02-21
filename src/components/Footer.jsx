@@ -52,7 +52,7 @@ const Footer = () => {
                         <h3 style={{ color: '#d4af37', marginBottom: '20px' }}>Address</h3>
                         <p style={{ color: '#8892b0', marginBottom: '10px' }}>Near St.Mary's JIO Fuels Mylom Kottarakkara,Kollam, Kerala</p>
                         <p style={{ color: '#8892b0', marginBottom: '10px' }}>+91 9895529892,+91 9656925280</p>
-                        <p style={{ color: '#8892b0', marginBottom: '10px' }}>norwaytravellightkottarakkara@gmail.com</p>
+                        <p style={{ color: '#8892b0', marginBottom: '10px' }}>norwaytravellight@gmail.com</p>
                     </div>
 
                     {/* Newsletter */}

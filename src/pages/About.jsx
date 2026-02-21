@@ -17,7 +17,7 @@ const About = () => {
     const img11 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994443/norway_project/nandhu.png";
     const img12 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994460/norway_project/renju1.png";
     const img13 = "https://res.cloudinary.com/dclejmil5/image/upload/v1766031898/jibin_waemxd.jpg";
-    const img14 = "https://res.cloudinary.com/dclejmil5/image/upload/v1766032319/sudhi_etcgqb.png";
+    const img14 = "https://res.cloudinary.com/dclejmil5/image/upload/v1771670484/Screenshot_2026-02-21_143731_c20sie.png";
     const img15 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994470/norway_project/shibin.png";
     const img16 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994374/norway_project/aswin.png";
     return (
@@ -88,17 +88,18 @@ const About = () => {
                     <div style={{ position: 'relative' }}>
                         <ChromaGrid
                             items={[
+                                { title: "Asif Noushad", subtitle: "Senior Guide", image: img14, gradient: "linear-gradient(145deg, #6366F1, #000)" },
                                 { title: "Aswin G Nair", subtitle: "Senior Guide", image: img16, gradient: "linear-gradient(145deg, #EF4444, #000)" },
-                                { title: "Shibin", subtitle: "Guide", image: img15, gradient: "linear-gradient(145deg, #8B5CF6, #000)" },
-                                { title: "Renju", subtitle: "Logistics", image: img12, gradient: "linear-gradient(145deg, #06B6D4, #000)" },
+                                { title: "Shibin", subtitle: "Packager", image: img15, gradient: "linear-gradient(145deg, #8B5CF6, #000)" },
+                                { title: "Renju", subtitle: "Packager", image: img12, gradient: "linear-gradient(145deg, #06B6D4, #000)" },
                                 { title: "Jibin R", subtitle: "Coordinator", image: img13, gradient: "linear-gradient(145deg, #EC4899, #000)" },
-                                { title: "Sudheesh", subtitle: "Driver", image: img14, gradient: "linear-gradient(145deg, #6366F1, #000)" },
+                                { title: "Sarath", subtitle: "Driver", image: img7, gradient: "linear-gradient(145deg, #EC4899, #000)" },
                                 { title: "Aneesh", subtitle: "Co-Driver", image: img10, gradient: "linear-gradient(145deg, #14B8A6, #000)" },
                                 { title: "Nandhu", subtitle: "Media Wing", image: img11, gradient: "linear-gradient(145deg, #F97316, #000)" },
                                 { title: "Akash", subtitle: "Media Wing", image: img9, gradient: "linear-gradient(145deg, #84CC16, #000)" },
                                 { title: "Amal Nandu", subtitle: "Staff", image: img6, gradient: "linear-gradient(145deg, #3B82F6, #000)" },
                                 { title: "Sangeth", subtitle: "Staff", image: img8, gradient: "linear-gradient(145deg, #A855F7, #000)" },
-                                { title: "Sarath", subtitle: "Staff", image: img7, gradient: "linear-gradient(145deg, #EC4899, #000)" }
+
                             ]}
                             columns={3}
                             rows={4}

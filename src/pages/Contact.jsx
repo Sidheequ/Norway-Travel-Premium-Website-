@@ -60,7 +60,7 @@ const Contact = () => {
                             <span>+91 9895529892, +91 9656925280,+96893299543</span>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', color: '#e6f1ff' }}>
-                            <FaEnvelope style={{ marginRight: '15px', color: '#d4af37' }} /> norwaytravellightkottarakkara@gmail.com
+                            <FaEnvelope style={{ marginRight: '15px', color: '#d4af37' }} /> norwaytravellight@gmail.com
                         </div>
                         <div style={{ display: 'flex', alignItems: 'start', marginBottom: '20px', color: '#e6f1ff' }}>
                             <FaMapMarkerAlt style={{ marginRight: '15px', color: '#d4af37', marginTop: '5px' }} />

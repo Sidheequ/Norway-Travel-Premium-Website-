@@ -29,10 +29,12 @@ app.get('/', (req, res) => {
 const authRoutes = require('./routes/auth');
 const packageRoutes = require('./routes/packages');
 const galleryRoutes = require('./routes/gallery');
+const reviewRoutes = require('./routes/reviews');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/packages', packageRoutes);
 app.use('/api/gallery', galleryRoutes);
+app.use('/api/reviews', reviewRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './GoogleReviews.css';
 import { FaStar, FaGoogle, FaPlus, FaTimes } from 'react-icons/fa';
 import { MdVerified } from 'react-icons/md';
@@ -78,8 +78,28 @@ const INITIAL_REVIEWS = [
 ];
 
 const GoogleReviews = () => {
-    const [reviews, setReviews] = useState(INITIAL_REVIEWS);
+    const [reviews, setReviews] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isUploading, setIsUploading] = useState(false); // added previously missing definition
+
+    useEffect(() => {
+        const fetchReviews = async () => {
+            try {
+                const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+                const res = await axios.get(`${API_URL}/api/reviews`);
+                // If there are no reviews from the DB, fallback to the initial ones
+                if (res.data.length === 0) {
+                    setReviews(INITIAL_REVIEWS);
+                } else {
+                    setReviews(res.data);
+                }
+            } catch (err) {
+                console.error("Error fetching reviews:", err);
+                setReviews(INITIAL_REVIEWS); // fallback on error
+            }
+        };
+        fetchReviews();
+    }, []);
 
     // Form State
     const [formData, setFormData] = useState({
@@ -113,27 +133,49 @@ const GoogleReviews = () => {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsUploading(true);
 
-        // Add new review to top of list
-        const newReview = {
-            id: Date.now(),
-            name: formData.name,
-            date: 'Just now',
-            rating: formData.rating,
-            text: formData.review,
-            avatar: formData.name.charAt(0).toUpperCase(),
-            bg: '#4caf50', // New reviews get green bg
-            image: formData.imagePreview // Store preview URL for now
-        };
+        try {
+            const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
-        setReviews([newReview, ...reviews]);
+            // Build the review payload
+            const newReviewData = {
+                name: formData.name,
+                email: formData.email,
+                rating: formData.rating,
+                review: formData.review,
+                avatar: formData.name.charAt(0).toUpperCase(),
+                bg: '#4caf50', // New reviews get green bg
+                image: formData.imagePreview || "" // Use preview temporarily or Cloudinary URL here later
+            };
 
-        // Reset and Close
-        setFormData({ name: '', email: '', rating: 5, review: '', image: null });
-        setIsModalOpen(false);
-        alert('Review submitted! (Image upload pending Cloudinary integration)');
+            const res = await axios.post(`${API_URL}/api/reviews`, newReviewData);
+
+            // Add new review to top of list
+            // Fallback correctly if using INITIAL_REVIEWS
+            setReviews(prevReviews => [
+                {
+                    ...res.data, // use DB data mapped to component expected keys
+                    id: res.data._id,
+                    date: 'Just now',
+                    text: res.data.review
+                },
+                ...prevReviews
+            ]);
+
+            // Reset and Close
+            setFormData({ name: '', email: '', rating: 5, review: '', image: null, imagePreview: null });
+            setIsModalOpen(false);
+            alert('Review submitted! (Image upload pending Cloudinary integration)');
+
+        } catch (error) {
+            console.error("Error submitting review:", error);
+            alert("Failed to submit review.");
+        } finally {
+            setIsUploading(false);
+        }
     };
 
     return (
@@ -169,7 +211,7 @@ const GoogleReviews = () => {
                                 </div>
                                 <div className="reviewer-info">
                                     <h4>{review.name}</h4>
-                                    <span>{review.date}</span>
+                                    <span>{review.date || new Date(review.createdAt).toLocaleDateString()}</span>
                                 </div>
                                 <FaGoogle className="google-icon" style={{ color: '#4285F4' }} />
                             </div>
@@ -178,7 +220,7 @@ const GoogleReviews = () => {
                                     <FaStar key={i} color={i < review.rating ? "#fbc02d" : "#e0e0e0"} />
                                 ))}
                             </div>
-                            <p className="review-text">{review.text}</p>
+                            <p className="review-text">{review.text || review.review}</p>
                             {review.image && (
                                 <img src={review.image} alt="User upload" style={{ width: '100%', height: '100px', objectFit: 'cover', marginTop: '10px', borderRadius: '8px' }} />
                             )}

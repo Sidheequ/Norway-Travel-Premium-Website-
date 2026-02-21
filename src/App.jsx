@@ -15,6 +15,7 @@ import AdminLogin from './pages/AdminLogin';
 import Dashboard from './pages/Dashboard';
 import ManagePackages from './pages/ManagePackages';
 import ManageGallery from './pages/ManageGallery';
+import ManageReviews from './pages/ManageReviews';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/packages" element={<ManagePackages />} />
           <Route path="/admin/gallery" element={<ManageGallery />} />
+          <Route path="/admin/reviews" element={<ManageReviews />} />
         </Routes>
         <Footer />
       </div>
