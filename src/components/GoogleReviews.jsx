@@ -81,6 +81,7 @@ const GoogleReviews = () => {
     const [reviews, setReviews] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isUploading, setIsUploading] = useState(false); // added previously missing definition
+    const [selectedImage, setSelectedImage] = useState(null); // For viewing review images
 
     useEffect(() => {
         const fetchReviews = async () => {
@@ -140,6 +141,27 @@ const GoogleReviews = () => {
         try {
             const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
+            let uploadedImageUrl = "";
+            if (formData.image) {
+                if (!CLOUD_NAME || !API_KEY || !API_SECRET) {
+                    alert("Cloudinary configuration missing. Please check your .env file.");
+                    setIsUploading(false);
+                    return;
+                }
+                const timestamp = Math.round((new Date).getTime() / 1000);
+                const signatureString = `timestamp=${timestamp}${API_SECRET}`;
+                const signature = CryptoJS.SHA1(signatureString).toString();
+
+                const uploadData = new FormData();
+                uploadData.append("file", formData.image);
+                uploadData.append("api_key", API_KEY);
+                uploadData.append("timestamp", timestamp);
+                uploadData.append("signature", signature);
+
+                const uploadRes = await axios.post(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, uploadData);
+                uploadedImageUrl = uploadRes.data.secure_url;
+            }
+
             // Build the review payload
             const newReviewData = {
                 name: formData.name,
@@ -148,7 +170,7 @@ const GoogleReviews = () => {
                 review: formData.review,
                 avatar: formData.name.charAt(0).toUpperCase(),
                 bg: '#4caf50', // New reviews get green bg
-                image: formData.imagePreview || "" // Use preview temporarily or Cloudinary URL here later
+                image: uploadedImageUrl || "" // Use uploaded Cloudinary URL
             };
 
             const res = await axios.post(`${API_URL}/api/reviews`, newReviewData);
@@ -168,7 +190,7 @@ const GoogleReviews = () => {
             // Reset and Close
             setFormData({ name: '', email: '', rating: 5, review: '', image: null, imagePreview: null });
             setIsModalOpen(false);
-            alert('Review submitted! (Image upload pending Cloudinary integration)');
+            alert('Review submitted successfully!');
 
         } catch (error) {
             console.error("Error submitting review:", error);
@@ -222,7 +244,12 @@ const GoogleReviews = () => {
                             </div>
                             <p className="review-text">{review.text || review.review}</p>
                             {review.image && (
-                                <img src={review.image} alt="User upload" style={{ width: '100%', height: '100px', objectFit: 'cover', marginTop: '10px', borderRadius: '8px' }} />
+                                <img
+                                    src={review.image}
+                                    alt="User upload"
+                                    onClick={() => setSelectedImage(review.image)}
+                                    style={{ width: '100%', height: '100px', objectFit: 'cover', marginTop: '10px', borderRadius: '8px', cursor: 'pointer' }}
+                                />
                             )}
                         </div>
                     ))}
@@ -301,6 +328,17 @@ const GoogleReviews = () => {
                                 {isUploading ? 'Uploading...' : 'Submit Review'}
                             </button>
                         </form>
+                    </div>
+                </div>
+            )}
+            {/* Image Viewer Modal */}
+            {selectedImage && (
+                <div className="modal-overlay" onClick={() => setSelectedImage(null)} style={{ zIndex: 10000, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ position: 'relative', maxWidth: '90%', maxHeight: '90%', display: 'flex', flexDirection: 'column', alignItems: 'center' }} onClick={e => e.stopPropagation()}>
+                        <button className="close-btn" onClick={() => setSelectedImage(null)} style={{ position: 'absolute', top: '-40px', right: '0', background: 'none', border: 'none', color: 'white', fontSize: '30px', cursor: 'pointer' }}>
+                            <FaTimes />
+                        </button>
+                        <img src={selectedImage} alt="Review full size" style={{ width: '100%', height: 'auto', maxHeight: '80vh', objectFit: 'contain', borderRadius: '8px' }} />
                     </div>
                 </div>
             )}
