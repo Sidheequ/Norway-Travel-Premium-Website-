@@ -3,12 +3,10 @@ import './GoogleReviews.css';
 import { FaStar, FaGoogle, FaPlus, FaTimes } from 'react-icons/fa';
 import { MdVerified } from 'react-icons/md';
 import axios from 'axios';
-import CryptoJS from 'crypto-js';
 
 // Cloudinary Configuration
-const CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
-const API_KEY = import.meta.env.VITE_CLOUDINARY_API_KEY;
-const API_SECRET = import.meta.env.VITE_CLOUDINARY_API_SECRET;
+const CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || "dclejmil5"; // Fallback to assumed cloud name from destinations
+const UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || "norway_preset"; // Must configure an unsigned preset in Cloudinary
 
 // Initial Mock Data (7 reviews)
 const INITIAL_REVIEWS = [
@@ -143,20 +141,16 @@ const GoogleReviews = () => {
 
             let uploadedImageUrl = "";
             if (formData.image) {
-                if (!CLOUD_NAME || !API_KEY || !API_SECRET) {
+                if (!CLOUD_NAME) {
                     alert("Cloudinary configuration missing. Please check your .env file.");
                     setIsUploading(false);
                     return;
                 }
-                const timestamp = Math.round((new Date).getTime() / 1000);
-                const signatureString = `timestamp=${timestamp}${API_SECRET}`;
-                const signature = CryptoJS.SHA1(signatureString).toString();
 
                 const uploadData = new FormData();
                 uploadData.append("file", formData.image);
-                uploadData.append("api_key", API_KEY);
-                uploadData.append("timestamp", timestamp);
-                uploadData.append("signature", signature);
+                uploadData.append("upload_preset", UPLOAD_PRESET);
+                uploadData.append("cloud_name", CLOUD_NAME);
 
                 const uploadRes = await axios.post(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, uploadData);
                 uploadedImageUrl = uploadRes.data.secure_url;
