@@ -14,7 +14,7 @@ const Destinations = () => {
         >
             <div className="container">
                 <div className="text-center" style={{ marginBottom: '60px' }}>
-                    <h1 style={{ marginBottom: '15px' }}>Explore <span className="text-gold">Norway</span></h1>
+                    <h1 style={{ marginBottom: '15px' }}>Explore <span className="text-gold">The World</span></h1>
                     <p style={{ color: '#8892b0', maxWidth: '600px', margin: '0 auto' }}>
                         Discover breathtaking tours and expeditions across incredible Norwegian destinations.
                     </p>
