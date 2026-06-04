@@ -12,11 +12,26 @@ router.post('/', async (req, res) => {
     }
 });
 
-// GET ALL REVIEWS
+// GET REVIEWS
 router.get('/', async (req, res) => {
     try {
-        const reviews = await Review.find().sort({ createdAt: -1 }); // Newest first
+        const query = req.query.all === 'true' ? {} : { isApproved: true };
+        const reviews = await Review.find(query).sort({ createdAt: -1 }); // Newest first
         res.status(200).json(reviews);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// APPROVE A REVIEW
+router.put('/:id/approve', async (req, res) => {
+    try {
+        const updatedReview = await Review.findByIdAndUpdate(
+            req.params.id,
+            { $set: { isApproved: true } },
+            { new: true }
+        );
+        res.status(200).json(updatedReview);
     } catch (err) {
         res.status(500).json(err);
     }

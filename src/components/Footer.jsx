@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaTwitter, FaUser, FaWhatsapp } from 'react-icons/fa';
+import { getCloudinaryUrl } from '../utils/cloudinary';
 const Footer = () => {
-    const logo = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994422/norway_project/logo.png";
+    const logo = getCloudinaryUrl("v1765994422/norway_project/logo.png");
     return (
         <footer style={{ backgroundColor: '#020c1b', color: '#fff', padding: '60px 0 20px' }}>
             <div className="container">

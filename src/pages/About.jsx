@@ -1,25 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ChromaGrid from '../components/ChromaGrid';
+import { getCloudinaryUrl } from '../utils/cloudinary';
 import '../pages/About.css';
 const About = () => {
     // Team Member Images
-    const img1 = "https://res.cloudinary.com/dclejmil5/image/upload/v1766030455/shibu1_t6yfwv.jpg"; // Shibu
-    const img2 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994456/norway_project/renju.png"; // Renju
-    const img3 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994477/norway_project/subin.png"; // Subin
-    const img4 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994474/norway_project/sojan.png"; // Sojan
-    const img5 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994433/norway_project/me.jpg";   // Sidheequ
-    const img6 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994369/norway_project/amalnandu.png";
-    const img7 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994467/norway_project/sarath.png";
-    const img8 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994464/norway_project/sangeeth.png";
-    const img9 = "https://res.cloudinary.com/dclejmil5/image/upload/v1766026804/norway_project/akash.jpg";
-    const img10 = "https://res.cloudinary.com/dclejmil5/image/upload/v1766031897/aneesh_yepthk.jpg";
-    const img11 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994443/norway_project/nandhu.png";
-    const img12 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994460/norway_project/renju1.png";
-    const img13 = "https://res.cloudinary.com/dclejmil5/image/upload/v1766031898/jibin_waemxd.jpg";
-    const img14 = "https://res.cloudinary.com/dclejmil5/image/upload/v1771670484/Screenshot_2026-02-21_143731_c20sie.png";
-    const img15 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994470/norway_project/shibin.png";
-    const img16 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994374/norway_project/aswin.png";
+    const img1 = getCloudinaryUrl("v1766030455/shibu1_t6yfwv.jpg"); // Shibu
+    const img2 = getCloudinaryUrl("v1765994456/norway_project/renju.png"); // Renju
+    const img3 = getCloudinaryUrl("v1765994477/norway_project/subin.png"); // Subin
+    const img4 = getCloudinaryUrl("v1765994474/norway_project/sojan.png"); // Sojan
+    const img5 = getCloudinaryUrl("v1765994433/norway_project/me.jpg");   // Sidheequ
+    const img6 = getCloudinaryUrl("v1765994369/norway_project/amalnandu.png");
+    const img7 = getCloudinaryUrl("v1765994467/norway_project/sarath.png");
+    const img8 = getCloudinaryUrl("v1765994464/norway_project/sangeeth.png");
+    const img9 = getCloudinaryUrl("v1766026804/norway_project/akash.jpg");
+    const img10 = getCloudinaryUrl("v1766031897/aneesh_yepthk.jpg");
+    const img11 = getCloudinaryUrl("v1765994443/norway_project/nandhu.png");
+    const img12 = getCloudinaryUrl("v1765994460/norway_project/renju1.png");
+    const img13 = getCloudinaryUrl("v1766031898/jibin_waemxd.jpg");
+    const img14 = getCloudinaryUrl("v1771670484/Screenshot_2026-02-21_143731_c20sie.png");
+    const img15 = getCloudinaryUrl("v1765994470/norway_project/shibin.png");
+    const img16 = getCloudinaryUrl("v1765994374/norway_project/aswin.png");
     return (
         <motion.div
             initial={{ opacity: 0 }}

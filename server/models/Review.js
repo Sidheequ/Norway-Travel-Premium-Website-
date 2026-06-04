@@ -31,6 +31,10 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         default: "#4caf50",
     },
+    isApproved: {
+        type: Boolean,
+        default: false,
+    },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Review', reviewSchema);

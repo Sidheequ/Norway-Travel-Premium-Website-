@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { getCloudinaryUrl } from '../utils/cloudinary';
 // Final build fix for image URL resolution
 import '../index.css';
 
 const Navbar = () => {
-    const logo = "https://res.cloudinary.com/dclejmil5/image/upload/v1765994422/norway_project/logo.png";
+    const logo = getCloudinaryUrl("v1765994422/norway_project/logo.png");
     const [click, setClick] = useState(false);
     const [scroll, setScroll] = useState(false);
 

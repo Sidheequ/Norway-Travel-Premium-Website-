@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
 import { FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import Loader from '../components/Loader';
 
 const Gallery = () => {
     const [gallery, setGallery] = useState([]);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchGallery = async () => {
@@ -14,12 +16,18 @@ const Gallery = () => {
                 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
                 const res = await axios.get(`${API_URL}/api/gallery`);
                 setGallery(res.data);
+                setLoading(false);
             } catch (err) {
                 console.error("Error fetching gallery:", err);
+                setLoading(false);
             }
         };
         fetchGallery();
     }, []);
+
+    if (loading) {
+        return <Loader />;
+    }
 
     const openLightbox = (index) => {
         setCurrentImageIndex(index);

@@ -5,8 +5,8 @@ import { MdVerified } from 'react-icons/md';
 import axios from 'axios';
 
 // Cloudinary Configuration
-const CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || "dclejmil5"; // Fallback to assumed cloud name from destinations
-const UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || "norway_preset"; // Must configure an unsigned preset in Cloudinary
+const CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+const UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
 
 // Initial Mock Data (7 reviews)
 const INITIAL_REVIEWS = [

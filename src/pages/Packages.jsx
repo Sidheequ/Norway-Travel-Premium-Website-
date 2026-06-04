@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 // import Card from '../components/Card';
 import axios from 'axios';
+import { getCloudinaryUrl } from '../utils/cloudinary';
+import Loader from '../components/Loader';
 
-const img1 = "https://res.cloudinary.com/dclejmil5/image/upload/v1765989484/hotel_vh08ix.jpg";
+const img1 = getCloudinaryUrl("v1765989484/hotel_vh08ix.jpg");
 
 const Packages = () => {
     const [packages, setPackages] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchPackages = async () => {
@@ -15,12 +18,18 @@ const Packages = () => {
                 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
                 const res = await axios.get(`${API_URL}/api/packages`);
                 setPackages(res.data);
+                setLoading(false);
             } catch (err) {
                 console.error("Error fetching packages:", err);
+                setLoading(false);
             }
         };
         fetchPackages();
     }, []);
+
+    if (loading) {
+        return <Loader />;
+    }
 
     return (
         <motion.div

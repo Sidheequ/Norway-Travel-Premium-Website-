@@ -1,8 +1,8 @@
-export const destinationsData = [
+const destinationsList = [
     {
         id: 1,
         title: "KERALA",
-        image: "https://res.cloudinary.com/dclejmil5/image/upload/v1766026397/norway_project/kerala1.jpg",
+        image: "v1766026397/norway_project/kerala1.jpg",
         description: "Kerala, a state on India's tropical Malabar Coast, has nearly 600km of Arabian Sea shoreline. It's known for its palm-lined beaches and backwaters, a network of canals. Inland are the Western Ghats, mountains whose slopes support tea, coffee and spice plantations as well as wildlife. National parks like Eravikulam and Periyar, plus Wayanad and other sanctuaries, are home to elephants, langur monkeys and tigers",
         places: ["Munnar – Rolling tea gardens, cool climate, Eravikulam National Park, Mattupetty Dam, and scenic viewpoints",
             "Athirappilly – The Niagara of India with majestic waterfalls and lush surroundings",
@@ -17,7 +17,7 @@ export const destinationsData = [
     {
         id: 2,
         title: "TAMILNADU",
-        image: "https://res.cloudinary.com/dclejmil5/image/upload/v1766000376/norway_project/tamilnadu1.jpg",
+        image: "v1766000376/norway_project/tamilnadu1.jpg",
         description: "Tamil Nadu is the southernmost state of India. The tenth largest Indian state by area and the sixth largest by population, Tamil Nadu is the home of the Tamil people, who speak the Tamil language—the state's official language and the first to be recognised as a classical language in India. The capital and largest city is Chennai.",
         places: ["Kodaikanal – A scenic hill station with lush greenery, Coaker’s Walk, Pillar Rocks, boating, and peaceful surroundings",
             "Ooty – The “Queen of Hills” with beautiful tea plantations, lakes, botanical gardens, and pleasant weather year-round",
@@ -28,7 +28,7 @@ export const destinationsData = [
     {
         id: 3,
         title: "KARNATAKA",
-        image: "https://res.cloudinary.com/dclejmil5/image/upload/v1765994413/norway_project/karnataka.jpg",
+        image: "v1765994413/norway_project/karnataka.jpg",
         description: "Embark on a journey through the diverse landscapes, rich heritage, and vibrant culture of Karnataka with our all-inclusive, customizable tourism packages. Whether you're a nature lover, history buff, or adventure seeker, Karnataka has something unforgettable waiting for you.",
         places: ["Mysore – Explore the grandeur of Mysore Palace, the charm of Brindavan Garden, and the vibrant wildlife at Mysore Zoo",
             "Bangalore – The modern face of Karnataka with buzzing city life, tech hubs, shopping, and culture",
@@ -43,7 +43,7 @@ export const destinationsData = [
     {
         id: 4,
         title: "GOA",
-        image: "https://res.cloudinary.com/dclejmil5/image/upload/v1766026389/norway_project/goa1.jpg",
+        image: "v1766026389/norway_project/goa1.jpg",
         description: "Goa is a state in southwestern India, bordering the Arabian Sea. It is known for its beaches, temples, and colonial architecture.",
         places: ["Calangute Beach: The Queen of Beaches That Never Sleeps",
             "Basilica of Bom Jesus: A Pilgrimage Through History and Faith",
@@ -54,7 +54,7 @@ export const destinationsData = [
     {
         id: 5,
         title: "HYDRABAD",
-        image: "https://res.cloudinary.com/dclejmil5/image/upload/v1765994404/norway_project/hydrabad.jpg",
+        image: "v1765994404/norway_project/hydrabad.jpg",
         description: "Hyderabad is a city in Telangana, India. It is known for its rich history, culture, and cuisine.",
         places: ["Charminar – The iconic 16th-century marvel",
             "Hussain Sagar Lake: A Serene Spot for Boating and Photography",
@@ -66,7 +66,7 @@ export const destinationsData = [
     {
         id: 6,
         title: "RAJASTHAN",
-        image: "https://res.cloudinary.com/dclejmil5/image/upload/v1766000372/norway_project/rajasthan1.jpg",
+        image: "v1766000372/norway_project/rajasthan1.jpg",
         description: " राजस्थान is a state in northwestern India, bordering Pakistan to the west and the states of Gujarat and Haryana to the south and east. It is known for its rich history, culture, and cuisine.",
         places: [
             "Jaisalmer Fort: A Gateway to the Desert",
@@ -78,7 +78,7 @@ export const destinationsData = [
     {
         id: 7,
         title: "MANALI",
-        image: "https://res.cloudinary.com/dclejmil5/image/upload/v1765994427/norway_project/manali.jpg",
+        image: "v1765994427/norway_project/manali.jpg",
         description: "Tucked away in the heart of Himachal Pradesh, Manali is a dream destination for nature lovers, adventure seekers, and peace chasers alike.",
         places: ["Solang Valley – Perfect for paragliding, skiing, and snowboarding",
             "Rohtang Pass – A breathtaking mountain pass offering snow adventures and scenic drives",
@@ -89,7 +89,7 @@ export const destinationsData = [
     {
         id: 8,
         title: "DELHI",
-        image: "https://res.cloudinary.com/dclejmil5/image/upload/v1765994380/norway_project/delhi.jpg",
+        image: "v1765994380/norway_project/delhi.jpg",
         description: "Step into the heart of India with our Delhi–Agra tour package, where royal history, vibrant culture, and architectural wonders await.",
         places: [
             "India Gate – Symbol of national pride",
@@ -104,3 +104,10 @@ export const destinationsData = [
             "Fatehpur Sikri – An ancient red sandstone city"]
     }
 ];
+
+import { getCloudinaryUrl } from '../utils/cloudinary';
+
+export const destinationsData = destinationsList.map(dest => ({
+    ...dest,
+    image: getCloudinaryUrl(dest.image)
+}));
